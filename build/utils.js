@@ -21,9 +21,19 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  var modulesCssLoader = {
+    loader: 'css-loader',
+    options: {
+      modules: true,
+      localIdentName: '[path][name]__[local]--[hash:base64:5]',
+      minimize: process.env.NODE_ENV === 'production',
+      sourceMap: options.sourceMap
+    }
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    var loaders = [cssLoader]
+    var loaders = options.modules ? [modulesCssLoader] : [cssLoader]
 
     if (loader) {
       loaders.push({
@@ -65,10 +75,22 @@ exports.styleLoaders = function (options) {
   for (var extension in loaders) {
     var loader = loaders[extension]
     output.push({
-      test: new RegExp('\\.' + extension + '$'),
+      test: new RegExp('[^\\.modules]\\.' + extension + '$'),
       use: loader,
     })
+  }
+  return output
+}
 
+exports.modulesStyleLoaders = function(options) {
+  var output = []
+  var loaders = exports.cssLoaders(options)
+  for (var extension in loaders) {
+    var loader = loaders[extension]
+    output.push({
+      test: new RegExp('\\.modules\\.' + extension + '$'),
+      use: loader,
+    })
   }
   return output
 }

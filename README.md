@@ -121,6 +121,18 @@ module.exports = {
 
 详细的配置以及选项可以查看[http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)的文档
 
+## CSS Modules
+
+支持 `CSS Modules`，如果需要使用 `CSS Modules`，对应的文件名改成指定的后缀名`.modules.extension`，如下：
+
+- css      -> .modules.css
+- postcss  -> .modules.postcss
+- less     -> .modules.less
+- sass     -> .modules.sass
+- scss     -> .modules.sass
+- stylus   -> .modules.stylus
+- styl     -> .modules.styl
+
 ## 参考链接
 
 - [React and redux based, lightweight and elm-style framework](https://github.com/dvajs/dva)
