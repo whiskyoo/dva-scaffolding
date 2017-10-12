@@ -75,7 +75,7 @@ exports.styleLoaders = function (options) {
   for (var extension in loaders) {
     var loader = loaders[extension]
     output.push({
-      test: new RegExp('[^\\.modules]\\.' + extension + '$'),
+      test: new RegExp('^(?!.*\\.modules).*\\.' + extension + '$'),
       use: loader,
     })
   }
