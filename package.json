@@ -1,4 +1,8 @@
 {
+  "name": "dva-scaffolding",
+  "version": "1.0.0",
+  "description": "A scaffolding base on dva-react-router-3",
+  "author": "whiskyoo",
   "private": true,
   "scripts": {
     "start": "node build/dev-server.js",

@@ -1,6 +1,6 @@
 # dva-scaffolding
 
-一个基于dva的脚手架，dva的基本介绍和api可以参考[官方github](https://github.com/dvajs/dva)
+一个基于dva(dva-react-router-3)的脚手架，dva的基本介绍和api可以参考[官方github](https://github.com/dvajs/dva)
 
 ## 项目结构
 
